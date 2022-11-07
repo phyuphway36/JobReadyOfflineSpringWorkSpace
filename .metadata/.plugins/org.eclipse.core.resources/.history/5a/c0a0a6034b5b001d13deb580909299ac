@@ -1,0 +1,10 @@
+oracle:
+  username: ymluser
+  password: yml1234
+  url: ymlurl
+  
+aws:
+  cloud:
+    service: ymlservice
+    authentication: ymlauthentication
+    cached: ymlcached

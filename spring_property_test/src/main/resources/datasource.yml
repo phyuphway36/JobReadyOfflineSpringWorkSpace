@@ -1,0 +1,28 @@
+spring:
+  profiles:
+    active: second
+
+user: ymluser
+password: yml1234
+url: ymlurl
+ 
+service: ymlservice
+authentication: ymlauthentication
+cached: ymlcached
+servers: jboss,tomcat,redat,centos
+
+---
+
+spring:
+  congig:
+    activate:
+      on-profile: second
+  
+user: ymluserSecond
+password: yml1234second
+url: ymlurlSecond
+ 
+service: ymlserviceSecond
+authentication: ymlauthenticationSecond
+cached: ymlcachedSecond
+servers: jboss,tomcat,redat,centos

@@ -1,0 +1,62 @@
+package com.hostmdy.property.config;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.core.env.Environment;
+
+import com.hostmdy.property.bean.CloudDataSource;
+import com.hostmdy.property.bean.MyDataSource;
+
+@Configuration
+//@PropertySource({"classpath:oracle_datasource.properties","classpath:aws_cloud_datasource.properties"})
+//@PropertySources({
+//	@PropertySource("classpath:oracle_datasource.properties"),
+//	@PropertySource("classpath:aws_cloud_datasource.properties")
+//})
+@EnableConfigurationProperties
+@ConfigurationProperties(prefix = "oracle")
+public class PropertyConfig {
+	@Autowired
+	Environment env;
+	
+	//@Value("${oracle.username}")
+	String username;
+	
+	//@Value("${oracle.password}")
+	String password;
+	
+	//@Value("${oracle.url}")
+	String url;
+	
+	@Value("${aws.cloud.service}")
+	String service;
+	
+	@Value("${aws.cloud.authentication}")
+	String authentication;
+	
+	@Value("${aws.cloud.cached}")
+	String cached;
+	
+	@Bean
+	MyDataSource myDataSource() {
+		return new MyDataSource(username/*env.getProperty("username")*/, password/*env.getProperty("password")*/, url);
+	}
+	
+	@Bean
+	CloudDataSource cloudDataSource() {
+		return new CloudDataSource(service, authentication, cached);
+	}
+	
+	@Bean
+	static PropertySourcesPlaceholderConfigurer properties() {
+		return new PropertySourcesPlaceholderConfigurer();
+	}
+
+}

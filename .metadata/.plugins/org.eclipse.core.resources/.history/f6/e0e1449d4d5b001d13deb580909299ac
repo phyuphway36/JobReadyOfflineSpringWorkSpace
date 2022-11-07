@@ -1,0 +1,8 @@
+oracle.username = kyawkyaw
+oracle.password = admin@1234
+oracle.url = jdbc:oracle://localhost:1527/propertydb
+
+
+aws.cloud.service = premium
+aws.cloud.authentication = Admin
+aws.cloud.cached = true

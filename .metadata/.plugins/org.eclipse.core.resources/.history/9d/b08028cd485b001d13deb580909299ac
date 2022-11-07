@@ -1,0 +1,13 @@
+package com.hostmdy.property.bean;
+
+public class DataSource {
+	
+	private String username;
+	private String password;
+	private String email;
+	private String service;
+	private String authentication;
+	private String cached;
+
+	
+}

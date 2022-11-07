@@ -1,0 +1,5 @@
+package com.hostmdy.property;
+
+public class MyDataSource {
+
+}

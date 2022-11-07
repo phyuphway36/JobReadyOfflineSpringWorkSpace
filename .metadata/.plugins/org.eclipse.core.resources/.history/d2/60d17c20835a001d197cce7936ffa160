@@ -1,0 +1,33 @@
+package com.hostmdy.property.config;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+
+import com.hostmdy.property.bean.MyDataSource;
+
+@Configuration
+@PropertySource("classpath:oracle_datasource.properties")
+public class PropertyConfig {
+	@Value("${oracle.username}")
+	String username;
+	
+	@Value("${oracle.password}")
+	String password;
+	
+	@Value("${oracle.url}")
+	String url;
+	
+	@Bean
+	MyDataSource myDataSource() {
+		return new MyDataSource(username, password, url);
+	}
+	
+	@Bean
+	static PropertySourcesPlaceholderConfigurer properties() {
+		return new PropertySourcesPlaceholderConfigurer();
+	}
+
+}

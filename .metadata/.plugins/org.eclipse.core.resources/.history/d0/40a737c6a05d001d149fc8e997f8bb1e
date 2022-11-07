@@ -1,0 +1,40 @@
+package com.hostmdy.demo;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import com.hostmdy.demo.domain.Ingredient;
+
+class IngredientTest {
+	
+	Ingredient ingredient;
+
+	@BeforeEach
+	void setUp() throws Exception {
+		ingredient = new Ingredient();
+	}
+
+	@Test
+	void idTest() {
+		Long id = 10L;
+		ingredient.setId(id);
+		
+		assertEquals(id, ingredient.getId());
+	}
+
+	@Test
+	void descriptionTest() {
+		
+//		String testString = "This is test String";
+//		
+//		ingredient.setDescription(testString);
+		assertNull(ingredient.getDescription());
+	}
+	
+	@Test
+	void amountTest() {
+		assertNotNull(ingredient.getAmount());
+	}
+}

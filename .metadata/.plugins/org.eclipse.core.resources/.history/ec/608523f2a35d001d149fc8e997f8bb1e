@@ -1,0 +1,31 @@
+package com.hostmdy.demo.services;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.Set;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import com.hostmdy.demo.domain.Recipe;
+import com.hostmdy.demo.repositories.RecipeRepository;
+
+class RecipeServiceImplTest {
+	
+	RecipeServiceImpl recipeService;
+
+	RecipeRepository recipeRepository;
+	@BeforeEach
+	void setUp() throws Exception {
+		recipeService = new RecipeServiceImpl(null);
+		
+	}
+
+	@Test
+	void getRecipeTest() {
+		Set<Recipe> recipes = recipeService.getRecipes();
+		
+		assertEquals(recipes.size(), 1);
+	}
+
+}

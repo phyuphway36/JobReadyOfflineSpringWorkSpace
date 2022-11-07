@@ -1,0 +1,8 @@
+oracle.username = test
+oracle.password = test@1234
+oracle.url = jdbc:oracle://localhost:1527/testdb
+
+
+aws.cloud.service = sandbox
+aws.cloud.authentication = testuser
+aws.cloud.cached = false

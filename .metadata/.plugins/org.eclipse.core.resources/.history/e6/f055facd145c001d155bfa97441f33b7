@@ -1,0 +1,27 @@
+package com.hostmdy.property.bean;
+
+//DTO
+public class DataTransferTest {
+
+	private final int id;
+	private final String name;
+	private final String email;
+	public DataTransferTest(int id, String name, String email) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+	}
+	public int getId() {
+		return id;
+	}
+	public String getName() {
+		return name;
+	}
+	public String getEmail() {
+		return email;
+	}
+	
+	
+	
+}

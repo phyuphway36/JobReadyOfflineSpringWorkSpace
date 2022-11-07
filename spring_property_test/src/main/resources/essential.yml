@@ -1,0 +1,31 @@
+fruit: Apple #property
+fruits: Mango,Banana,Payaya,Kiwi #array
+ 
+employee:
+  firstname: MgMg
+  lastname: KyawKyaw
+  email: mkk@gmail.com
+  active: true
+  
+string_value: "This is my string"
+colon_string: "My Favourite Language is : Java Flutter Swift"
+
+boolean_val1: yes
+boolean_val2: True
+boolean_val3: true
+
+boolean_val4: no
+boolean_val5: False
+boolean_val6: false
+
+line_spacing_string: |
+  This is line1.
+  This is line2.
+  This is line3.
+  
+#line_no_spacing: and
+#  This is line1.
+#  This is line2.
+#  This is line3.  
+  
+  

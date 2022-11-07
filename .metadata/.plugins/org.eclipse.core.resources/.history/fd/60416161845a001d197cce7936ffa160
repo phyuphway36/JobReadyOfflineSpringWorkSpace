@@ -1,0 +1,22 @@
+package com.hostmdy.property;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+import com.hostmdy.property.bean.MyDataSource;
+
+@SpringBootApplication
+public class SpringPropertyTestApplication {
+
+	public static void main(String[] args) {
+	ApplicationContext context = SpringApplication.run(SpringPropertyTestApplication.class, args);
+	
+	MyDataSource dataSourceBean = context.getBean(MyDataSource.class);
+	
+	System.out.println("Username: "+dataSourceBean.getUsername());
+	System.out.println("Password: "+dataSourceBean.getPassword());
+	System.out.println("URL: "+dataSourceBean.getUrl());
+	}
+
+}
